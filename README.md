@@ -7,4 +7,24 @@ Arduino nos informará en nuestro móvil cuando se produzca un cambio de IP en e
 
 No es necesario registrarse, ni crear ninguna cuenta especial, simplemente descargar la aplicación Omniblug Home de Google Play y configurar Arduino según las indicaciones. Tendrás en cuestión de minutos tú sistema de notificaciones listo.
 
+
+Material necesario
+==================
+
+1. Arduino (Uno, Mega o Nano)
+2. Módulo ethernet w5100 JY-MCU
+3. APP Omniblug Home (Google Play)
+
+Puedes ver los pasos del montaje en www.omniblug.com
+
+
+Utilización
+===========
+
+Una vez cargado el scket, simplemente debemos abrir la aplicación, iremos a los ajustes y en el apartado de configuración de Arduino pondremos la ip local y puerto que hemos configurado.
+
+Ahora nos vamos a la opción Módulo, y asegurándonos que estamos conectado a la red local, hacemos click en el botón enviar datos, esperamos unos segundos y ya tendremos configurado todo el sistema.
+
+Ya tendremos listo nuestro sistema de notificaciones de IP Pública.
+
 Toda la información del proyecto en www.omniblug.com
