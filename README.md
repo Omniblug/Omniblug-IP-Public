@@ -12,7 +12,7 @@ Material necesario
 ==================
 
 1. Arduino (Uno, Mega o Nano)
-2. Módulo ethernet w5100 JY-MCU
+2. Módulo ethernet W5100
 3. APP Omniblug Home (Google Play)
 
 Puedes ver los pasos del montaje en www.omniblug.com
