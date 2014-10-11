@@ -1,15 +1,14 @@
 /*
- OMNIBLUG IP Public
+ OMNIBLUG IP Public - V01R00
  
  Simple job for obtain ip public in thelephone android.
  
  Circuit:
- * Hlk-Rm04
+ arduino + ethernet W5100
  
- created 13 July 2014
+ created 10 October 2014
  by Juan Manuel Hernández
-
- */
+*/
 
 #include <SPI.h>
 #include <Ethernet.h>
@@ -22,9 +21,7 @@ int port = 8080;
 
 long wait = 900000;
 long consulta = 0;
-// datos
-//char API_key[] = "AIzaSyB4aePWdTMNiZWgTFNWUen7CDYGxoIMch8"; // API Key - no modify this parameter
-//char RegID[] = "APA91bElbx8jBzy3qd08UWFbs5HU6kT6XM1lpQ5A7-t8QibKZIR6QKClGV3d32cQSlKRqACTOeJWKBwzzUOvrxd5xUV-Fy1wKZW6jhiUNutA7fcC0gkHZLimUFkawxPefbd22b34EfS-4ZOK8N29IfKZgIK3Tch5Nw"; // <---- Modifier this parameter for you registry. Never public.
+
 char serverGoogle[] = "android.googleapis.com"; //GCM server adress
 char serverIPPublic[] = "icanhazip.com"; //server ip public
 
@@ -109,7 +106,6 @@ void loop() {
     
 /*************METODOS*************/
 void enviarIP(){
-  //Serial.println("Consulta y envio");
       String ipPublica = getIP(serverIPPublic);
       if(!ipPublica.equals("")){
           if(compruebaIP(ipPublica)){
@@ -123,38 +119,20 @@ void enviarIP(){
 boolean compruebaIP(String ipPublic){
   //comprobamos ip con la de la eeprom si es distinta guardamos y return true
   // 111.111.111.111->15 bytes pos 0->tam ip
-  //leemos la ip anterior
-  //Serial.println("inicio rutina");
-  
   int tamIp = EEPROM.read(0);
- // Serial.println("tamano ip: ");
- // Serial.println(tamIp);
-  
   String ipAntigua;
-  
   for (int i = 1; i <= tamIp; i++)
     ipAntigua.concat((char)EEPROM.read(i));
-    
- /* Serial.print("Ip leida eeprom:");
-  Serial.print(ipAntigua);
-  Serial.println("***");
-  Serial.print("Ip publica:");
-    Serial.print(ipPublic);
-    Serial.println("***");*/
   
   if(!ipPublic.equals(ipAntigua)){
     int tamipp = ipPublic.length();
     char ipChar[tamipp+1]; 
-    //Serial.println(tamipp);
     ipPublic.toCharArray(ipChar, tamipp+1);
-    /*Serial.print(ipChar);
-    Serial.println("es distinta");*/
     EEPROM.write(0, tamipp);
     for (int i = 1; i <= tamipp; i++)
       EEPROM.write(i, ipChar[i-1]);
     return true;
   }else{
-      //Serial.println("es la misma");
       return false;
   }
 }
@@ -185,8 +163,6 @@ String getIP(char server[]){
               webIP.concat(c);
           }
           
-          //Serial.println(webIP);
-          
           getIPpublic.stop();  
           int desde = webIP.indexOf("\r\n\r\n") + 4;
           ipPublic = webIP.substring(desde,webIP.length()-1); 
@@ -201,15 +177,12 @@ void sendGCM(char server[],String ipPublic){
    //creamos datos
         
     if(ipPublic){
-      //Serial.println(ipPublic);
-      
       char msg[] = "{\"data\":{\"message\":\"";
       char msg1[] = "\"},\"registration_ids\":[\"";
       char msg2[] = "\"]}"; 
       
       //creamos msg
       String message = msg+ipPublic+msg1+getRegID()+msg2; 
-      //Serial.println(message);
       EthernetClient gcm;
     
       if (gcm.connect(server, 80)) {
@@ -225,15 +198,7 @@ void sendGCM(char server[],String ipPublic){
           gcm.println();
           gcm.print(message);
           gcm.println();
-          
           delay(100);
-          
-          /*while(gcm.connected() && !gcm.available()) delay(1);
-          
-          while (gcm.available()) {
-              char c = gcm.read();
-              Serial.write(c);
-          }*/
           gcm.stop();
       }
     }   
