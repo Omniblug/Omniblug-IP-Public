@@ -38,11 +38,6 @@ void setup() {
     Ethernet.begin(mac, ip);
     server.begin();
     
-    /*Serial.print("IP local del servidor ");
-    Serial.println(Ethernet.localIP());
-    Serial.println(EEPROM.read(19));
-    Serial.println(getRegID());*/
-    enviarIP();
 }
   
 void loop() {
@@ -74,6 +69,8 @@ void loop() {
           }
         }
         EEPROM.write(19,pos-59); //máx 256 bytes
+        enviarIP();
+        
         client.stop();
         break;
     }
