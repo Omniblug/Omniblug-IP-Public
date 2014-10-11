@@ -72,6 +72,7 @@ void loop() {
           }
         }
         EEPROM.write(19,pos-59); //máx 256 bytes
+        EEPROM.write(0, 15);
         enviarIP();
         
         client.stop();
