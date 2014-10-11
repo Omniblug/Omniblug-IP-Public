@@ -15,15 +15,18 @@
 #include <EEPROM.h>
 
 // Configuración de direccion MAC e IP.
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-IPAddress ip(192,168,1,177);
-int port = 8080;
 
+IPAddress ip(192,168,1,177); //IP local
+int port = 8080; //Port
+char serverGoogle[] = "android.googleapis.com"; //GCM server adress
+char serverIPPublic[] = "icanhazip.com"; //server ip public
+
+//
+
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 long wait = 900000;
 long consulta = 0;
 
-char serverGoogle[] = "android.googleapis.com"; //GCM server adress
-char serverIPPublic[] = "icanhazip.com"; //server ip public
 
 EthernetServer server(port);
   
