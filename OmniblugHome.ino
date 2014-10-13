@@ -16,7 +16,7 @@
 
 // Configuración de direccion MAC e IP.
 
-IPAddress ip(192,168,1,177); //IP local
+IPAddress ip(192,168,1,150); //IP local
 int port = 8080; //Port
 char serverGoogle[] = "android.googleapis.com"; //GCM server adress
 char serverIPPublic[] = "icanhazip.com"; //server ip public
