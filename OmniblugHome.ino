@@ -154,14 +154,13 @@ String getIP(char server[]){
           //Serial.println("enviadoMsgIP");
           delay(100);
           
-          while(getIPpublic.connected() && !getIPpublic.available()) {
-            delay(1);
-            fin++;
-            if(fin==100)break;
-          }
-          while (getIPpublic.available()) {
+          while(getIPpublic.connected()){
+            if(getIPpublic.available()){
               char c = getIPpublic.read();
-              webIP.concat(c);
+              if(c!= 'n' && c != 'r') {
+                webIP.concat(c);
+              }
+            } 
           }
           
           getIPpublic.stop();  
