@@ -39,6 +39,9 @@ void setup() {
       
     // Inicia la conexión Ethernet y el servidor.
     Ethernet.begin(mac, ip);
+    
+    delay(1000);
+    
     server.begin();
     
 }
