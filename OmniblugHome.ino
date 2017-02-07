@@ -31,6 +31,9 @@ long consulta = 0;
 EthernetServer server(port);
   
 void setup() {
+    //Tiempo espera 1' conexión internet router en caso de fallo de alimentación
+    //delay(60000); //Descomentar retardo en caso que sea necesario
+ 
     //inicializamos ip
     EEPROM.write(0, 15);
   
