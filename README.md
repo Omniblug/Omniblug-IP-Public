@@ -1,4 +1,4 @@
-Omniblug-Home
+Omniblug-IP-Public
 =============
 
 Con unos sencillos pasos tendremos nuestro propio sistema de notificaciones de IP Pública en nuestro móvil y siempre estaremos conectado con nuestro hogar.
@@ -13,7 +13,7 @@ Material necesario
 
 1. Arduino (Uno, Mega o Nano)
 2. Módulo ethernet W5100
-3. APP Omniblug Home (Google Play)
+3. APP Omniblug IP (Google Play)
 
 Puedes ver los pasos del montaje en www.omniblug.com
 
