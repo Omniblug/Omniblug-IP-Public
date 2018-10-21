@@ -1,6 +1,8 @@
 Omniblug-IP-Public
 =============
 
+![alt text](http://www.omniblug.com/img/blog/ippublic/omniblug_home1.png)
+
 Con unos sencillos pasos tendremos nuestro propio sistema de notificaciones de IP Pública en nuestro móvil y siempre estaremos conectado con nuestro hogar.
 
 Arduino nos informará en nuestro móvil cuando se produzca un cambio de IP en el router de nuestro hogar mediante una notificación, con lo que siempre estaremos conectado.
