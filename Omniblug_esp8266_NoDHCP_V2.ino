@@ -1,11 +1,14 @@
 /*
- *  This sketch demonstrates how to set up a simple HTTP-like server.
- *  The server will set a GPIO pin depending on the request
- *    http://server_ip/gpio/0 will set the GPIO2 low,
- *    http://server_ip/gpio/1 will set the GPIO2 high
- *  server_ip is the IP address of the ESP8266 module, will be 
- *  printed to Serial when the module is connected.
- */
+ OMNIBLUG IP Public - V02R00
+ 
+ Simple job for obtain ip public in thelephone android.
+ 
+ Circuit:
+ ESP8266 + APP Omniblug Home IP
+ 
+ Created 20 Julio 2018
+ by Juan Manuel Hernández Ramírez
+*/
 
 #include <ESP8266WiFi.h>
 #include <EEPROM.h>
