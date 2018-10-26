@@ -2,8 +2,8 @@ Omniblug-IP-Public
 =============
 
 <p align="center">
-  <img src="http://www.omniblug.com/img/blog/ippublic/omniblug_home1.png" width="350" title="Omniblug IP Public">
-  <img src="http://www.omniblug.com/img/blog/ippublic/omniblug_home3.png" width="350" alt="Omniblug IP Public">
+  <img src="http://www.omniblug.com/img/blog/ippublic/ip_public_1.png" width="350" title="Omniblug IP Public">
+  <img src="http://www.omniblug.com/img/blog/ippublic/ip_public_3.png" width="350" alt="Omniblug IP Public">
 </p>
 
 Con unos sencillos pasos tendremos nuestro propio sistema de notificaciones de IP Pública en nuestro móvil y siempre estaremos conectado con nuestro hogar.
