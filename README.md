@@ -16,7 +16,9 @@ No es necesario registrarse, ni crear ninguna cuenta especial, simplemente desca
 Material necesario
 ==================
 
-1. Ethernet: Arduino (Uno, Mega o Nano) + Módulo ethernet W5100 or WIFI: ESP8266 (Nodecmu)
+1. Nodemcu ESP-8266/ESP-32 (WIFI)
+   or Arduino (Uno, Mega o Nano) + Módulo ethernet W5100 (Ethernet) 
+  
 2. APP Omniblug IP (Google Play)
 
 Puedes ver los pasos del montaje en www.omniblug.com
